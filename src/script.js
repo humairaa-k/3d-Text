@@ -25,7 +25,7 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('./static/textures/matcaps/8.png')
+const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
 matcapTexture.addEventListener.colorSpace = THREE.SRGBColorSpace
 
 /**
@@ -34,7 +34,7 @@ matcapTexture.addEventListener.colorSpace = THREE.SRGBColorSpace
 const fontLoader = new FontLoader()
 
 fontLoader.load(
-    './static/fonts/helvetiker_regular.typeface.json',
+    '/fonts/helvetiker_regular.typeface.json',
     (font) =>
     {
         console.log(font)
@@ -53,7 +53,7 @@ fontLoader.load(
                 bevelSegments: 4
             }
         )
-        textGeometry.computeBoundingBox()
+        // textGeometry.computeBoundingBox()
         textGeometry.center()
 
         const Material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture})
